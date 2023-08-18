@@ -1,0 +1,42 @@
+package com.springboot;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.springboot.entity.Role;
+import com.springboot.entity.User;
+import com.springboot.repository.UserRepository;
+
+@SpringBootApplication
+public class SpringSecurityRoleBasedAuthApplication implements CommandLineRunner {
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringSecurityJWTAuthApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// User user = new User();
+		// user.setUsername("prasad");
+		// user.setUserId(2);
+		// user.setPassword(this.bCryptPasswordEncoder.encode("prasad@123"));
+		// Set<Role> roles = new HashSet<>();
+		// roles.add(new Role(1,"ROLE_NORMAL"));
+		// // roles.add(new Role(2,"ROLE_ADMIN"));
+		// user.setRoles(roles);
+		// this.userRepository.save(user);	
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.microservice.external;
+
+public class FeignClientIntercepter {
+
+}

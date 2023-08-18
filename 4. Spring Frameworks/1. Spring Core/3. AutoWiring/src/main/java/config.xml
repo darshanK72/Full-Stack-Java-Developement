@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd"> 
+    
+ 
+   <context:annotation-config/>
+    
+   <util:list>
+   
+   </util:list>
+    
+    <bean class="com.spring.autowire.AutoWiring.beans.Address" name="address">
+    	<property name="street" value="Anand Nagar"/>
+    	<property name="city" value="Malegaon"/>
+    	<property name="state" value="Maharashtra"/>
+    </bean>
+    
+    <bean class="com.spring.autowire.AutoWiring.beans.Address" name="address1">
+    	<property name="street" value="Joyti Nagar"/>
+    	<property name="city" value="Malegaon"/>
+    	<property name="state" value="Maharashtra"/>
+    </bean>
+    
+    
+    <bean class="com.spring.autowire.AutoWiring.beans.Student" name="student1" autowire="byName">
+    	<property name="rollNo" value="101"/>
+    	<property name="name" value="Darshan Khairnar"/>
+    	<property name="phone" value="9834444657"/>
+    </bean>
+    
+  <!--   <bean class="com.spring.autowire.AutoWiring.beans.Student" name="student2" autowire="byType">
+    	<property name="rollNo" value="102"/>
+    	<property name="name" value="Prasad Khairnar"/>
+    	<property name="phone" value="9832355237"/>
+    </bean> --> 
+    <bean class="com.spring.autowire.AutoWiring.beans.Student" name="student3" autowire="constructor">
+    	<property name="rollNo" value="103"/>
+    	<property name="name" value="Aakash Khairnar"/>
+    	<property name="phone" value="9823523237"/>
+    </bean>
+    <bean class="com.spring.autowire.AutoWiring.beans.Employee" name="emp1">
+    	<property name="name" value="Vaishnavi Khairnar"/>
+    	<property name="rollNo" value="104"/>
+    </bean>
+    
+    <bean class="com.spring.autowire.AutoWiring.beans.Employee" name="emp2">
+    	<property name="name" value="Krushna Khairnar"/>
+    	<property name="rollNo" value="105"/>
+    </bean>
+ 
+</beans>

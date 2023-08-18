@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "e:\\Full Stack Java\\12. Advance Java\\0. Jars\\ojdbc8-21.1.0.0.jar"
+    ]
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    <h2>First Name : <span th:text="${user.firstName}"></span></h2>
+	<h2>Last Name : <span th:text="${user.lastName}"></span></h2>
+	<h2> Date of Birth : <span th:text="${user.dob}"></span></h2>
+	<h2>Email ID : <span th:text="${user.email}"></span></h2>
+	<h2>Password :  <span th:text="${user.password}"></span></h2>
+	<h2>Address </h2> 
+	<h3>Street :  <span th:text="${user.street}"></span></h3>
+	<h3>City :  <span th:text="${user.city}"></span></h3>
+	<h3>State :  <span th:text="${user.state}"></span></h3>
+	<h3>Pincode :  <span th:text="${user.pincode}"></span></h3>
+</body>
+</html>

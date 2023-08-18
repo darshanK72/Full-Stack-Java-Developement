@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="baseTemplate::page(~{::form})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+</head>
+<body>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-4 mt-5"> -->
+        <form align="center" action="dologin" method="POST">
+          <span th:if="${param.error}" class="text-danger">
+            Some Error Occoured
+          </span>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="username">User Name : </label>
+              <input type="text" name="username" class="form-control" />
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="password">Password : </label>
+              <input type="password" name="password" class="form-control" />
+            </div>
+          
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+          </form>
+      <!-- </div>
+    </div>
+  </div> -->
+      
+</body>
+</html>

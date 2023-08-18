@@ -1,0 +1,38 @@
+server:
+  port: 8082
+  
+okta:
+  oauth2:
+    issuer: https://dev-75940483.okta.com/oauth2/default
+    audience: api://default
+ 
+spring:
+  application:
+    name: hotel-service
+    
+  datasource:
+    name: hoteldb
+    url: jdbc:mysql://localhost:3306/hoteldb
+    username: root
+    password: darshan@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+   
+  config:
+    import: configserver:http://localhost:8989
+    
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka

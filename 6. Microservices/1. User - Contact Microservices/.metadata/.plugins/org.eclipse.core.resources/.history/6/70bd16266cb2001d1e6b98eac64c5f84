@@ -1,0 +1,2 @@
+server.port=8083
+eureka.instance.hostname=api-gateway

@@ -1,0 +1,13 @@
+server:
+  port : 8989
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/darshanDarshan72/CodeWithDurgesh-Microservices-ConfigServer
+          clone-on-start: true

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<title>Register User</title>
+	<style>
+		body {
+			background-color: #e2e2e2;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<h3 class="col-6 text-center mt-5">This is Registration Page</h3>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-4" style="background-color: white;">
+				<form th:action="@{/details}" method="POST" th:object="${user}" >
+					<div class="mb-3">
+						<label for="firstName" class="form-label">First Name :</label>
+						<input type="text" class="form-control" id="fname" th:classappend="${#fields.hasErrors('firstName') ? 'is-invalid':''} " placeholder="Enter First Name"
+							name="firstName" th:value="${user.firstName}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('firstName')}" th:text="${e}"></div>
+					</div>
+					<div class="mb-3">
+						<label for="lastName" class="form-label">Last Name :</label>
+						<input type="text" class="form-control" th:classappend="${#fields.hasErrors('lastName') ? 'is-invalid':''} " id="lname" placeholder="Enter Last Name"
+							name="lastName" th:value="${user.lastName}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('lastName')}" th:text="${e}"></div>
+					</div>
+					<div class="mb-3">
+						<label for="dob" class="form-label">Date of Birth :</label>
+						<input type="date" class="form-control" th:classappend="${#fields.hasErrors('dob') ? 'is-invalid':''} " id="dob" placeholder="dd-mm-yyyy" name="dob"
+							th:value="${user.dob}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('dob')}" th:text="${e}"></div>
+					</div>
+					<!-- <div class="mb-3">
+                       <label for="gender" class="form-label">Gender : </label>
+                       <input type="radio" name="gender" class="form-radio" value="Male" th:value="Male" > Male
+                       <input type="radio" name="gender" class="form-radio" value="Female" th:value="FeMale"> Female
+                  </div> -->
+					<div class="mb-3">
+						<label for="email" class="form-label">Email :</label>
+						<input type="text" class="form-control" th:classappend="${#fields.hasErrors('email') ? 'is-invalid':''} " id="email" placeholder="Enter email"
+							name="email" th:value="${user.email}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('email')}" th:text="${e}"></div>
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">Password:</label>
+						<input type="password" class="form-control" th:classappend="${#fields.hasErrors('password') ? 'is-invalid':''} " id="pwd" placeholder="Enter password"
+							name="password" th:value="${user.password}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('password')}" th:text="${e}"></div>
+					</div>
+					<div class="mb-3">
+						<h5 class="text-center">Address</h5>
+						<label for="street">Street</label>
+						<input type="text" class="form-control" th:classappend="${#fields.hasErrors('street') ? 'is-invalid':''} " name="street" th:value="${user.street}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('street')}" th:text="${e}"></div>
+						<label for="city">City</label>
+						<input type="text" class="form-control" th:classappend="${#fields.hasErrors('city') ? 'is-invalid':''} " name="city" th:value="${user.city}">
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('state')}" th:text="${e}"></div>
+						<label for="state">State</label>
+						<input type="text" class="form-control" th:classappend="${#fields.hasErrors('state') ? 'is-invalid':''} " name="state" th:value="${user.state}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('state')}" th:text="${e}"></div>
+						<label for="pincode">Pin Code</label>
+						<input type="text" class="form-control" th:classappend="${#fields.hasErrors('pincode') ? 'is-invalid':''} " name="pincode" th:value="${user.pincode}" />
+						<div class="invalid-feedback" style="color: red; margin: 0"
+							th:each=" e : ${#fields.errors('pincode')}" th:text="${e}"></div>
+					</div>
+					<div class="text-center">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

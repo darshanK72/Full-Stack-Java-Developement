@@ -1,0 +1,4 @@
+okta.oauth2.issuer=https://dev-24452101.okta.com/oauth2/default
+okta.oauth2.client-id=0oa8kahqipbrhunvY5d7
+okta.oauth2.client-secret=TGz2r_CiF5twMueamxUgsjjo_JB_OK-_P-rrF8Pw
+okta.oauth2.redirect-uri=/authorization-code/callback

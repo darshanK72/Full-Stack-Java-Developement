@@ -1,0 +1,8 @@
+package com.springboot.entity;
+
+public class LoginRequest {
+	
+	private String username;
+	private String password;
+
+}

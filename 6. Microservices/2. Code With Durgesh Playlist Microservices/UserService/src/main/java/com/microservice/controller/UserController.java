@@ -1,0 +1,86 @@
+package com.microservice.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.microservice.dto.UserDto;
+import com.microservice.service.UserService;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+//import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+//import io.github.resilience4j.retry.annotation.Retry;
+
+@RestController
+@RequestMapping("/api/user")
+public class UserController {
+	
+	@Autowired
+	private UserService userService;
+	
+	@GetMapping("/get")
+	public ResponseEntity<List<UserDto>> getAllUser()
+	{
+		List<UserDto> userList = this.userService.getAllUser();
+		
+		return ResponseEntity.status(HttpStatus.OK).body(userList);
+	}
+	
+	int retryCount = 0;
+	@GetMapping("/get/{userId}")
+	@CircuitBreaker(name = "userCircuitBreaker", fallbackMethod = "userFallbackMethod")
+//	@Retry(name = "userRetry", fallbackMethod = "userFallbackMethod")
+//	@RateLimiter(name = "userRateLimiter", fallbackMethod = "userFallbackMethod ")
+	public ResponseEntity<UserDto> getUser(@PathVariable("userId") int userId)
+	{
+		System.out.println("Retry Count : " + this.retryCount);
+		retryCount++;
+		UserDto userDto = this.userService.getUser(userId);
+		
+		return ResponseEntity.status(HttpStatus.OK).body(userDto);
+		
+	}
+	
+	public ResponseEntity<UserDto> userFallbackMethod(int userId,Exception ex)
+	{
+		System.out.print(ex.getMessage());;
+		UserDto userDto = UserDto.builder()
+							.firstName("Dummy First Name")
+							.lastName("Dummy Last Name")
+							.username("Dummy User Name")
+							.userid(0)
+							.password("Dummy Password")
+							.ratings(new ArrayList<>())
+							.build();
+		
+		return ResponseEntity.status(HttpStatus.OK).body(userDto);
+	}
+	
+	@PostMapping("/create")
+	public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto)
+	{
+		return ResponseEntity.status(HttpStatus.OK).body(this.userService.createUser(userDto));
+	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto)
+	{
+		return ResponseEntity.status(HttpStatus.OK).body(this.userService.updateUser(userDto));
+	}
+	
+	@DeleteMapping("/delete/{userId}")
+	public ResponseEntity<UserDto> deleteUser(@PathVariable("userId") int userId)
+	{
+		return ResponseEntity.status(HttpStatus.OK).body(this.userService.deleteUser(userId));
+	}
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ServletProjects</display-name>
+  
+  <servlet>
+  	<servlet-name>Addition</servlet-name>
+  	<servlet-class>com.sumproduct.SumServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Addition</servlet-name>
+  	<url-pattern>/sum</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>Product</servlet-name>
+  	<servlet-class>com.sumproduct.ProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Product</servlet-name>
+  	<url-pattern>/prod</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Servlet1</servlet-name>
+  	<servlet-class>com.cookiesession.Servlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Servlet1</servlet-name>
+  	<url-pattern>/serv1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Servlett1</servlet-name>
+  	<servlet-class>com.httpsessions.Servlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Servlett1</servlet-name>
+  	<url-pattern>/serve1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Servlett2</servlet-name>
+  	<servlet-class>com.httpsessions.Servlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Servlett2</servlet-name>
+  	<url-pattern>/serve2</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>Ser1</servlet-name>
+  	<servlet-class>com.hiddensession.Servlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Ser1</servlet-name>
+  	<url-pattern>/hid1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Ser2</servlet-name>
+  	<servlet-class>com.hiddensession.Servlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Ser2</servlet-name>
+  	<url-pattern>/hid2</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+  	<servlet-name>S1</servlet-name>
+  	<servlet-class>com.urlrewrithing.Servlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>S1</servlet-name>
+  	<url-pattern>/url1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>S2</servlet-name>
+  	<servlet-class>com.urlrewrithing.Servlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>S2</servlet-name>
+  	<url-pattern>/url2</url-pattern>
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

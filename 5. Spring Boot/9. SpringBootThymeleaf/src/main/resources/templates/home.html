@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="template::template(~{::section})">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src=""></script>
+</head>
+<body>
+	<section>
+		<h1>This is Sparta</h1>
+		<h2> Name : <span th:text="${firstName}"></span> <span th:text="${lastName}"></span></h2>
+		<h2> Current Date : <span th:text="${time}"></span></h2>
+		<h2>Name in Uppercase : <span th:text="${#strings.toUpperCase(firstName)}"></span></h2>
+		<div th:with="a=10,b=32,c=${lastName}">
+			<h3><span th:text="${a}"></span></h3>
+			<h3><span th:text="'The sum of ' + ${a} + ' and ' + ${b} + ' is ' + ${a + b}"></span></h3>
+		</div>
+		<div th:each=" fruit,status : ${stringList}">
+			<h1 th:style="${status.odd} ? 'color:red;font-weight:900;' : 'color:green;'" th:text="${fruit}"></h1>
+		</div>
+
+		<img src="" th:src="@{/image/among.png}" alt="">
+	
+		<h1 th:if="${gender} == 'M'"> Male</h1>
+		<h1 th:if="${gender} == 'F'">Female</h1>
+	
+		<h2 th:switch="${#lists.size(stringList)}">
+			<h3 th:case="'0'">The List contains 0 element</h3>
+			<h3 th:case="'1'">The List contains 1 element</h3>
+			<h3 th:case="*"> The list contains more than one element</h3>
+		</h2>
+	
+		<footer th:include="index::footer1('Darshan Khairnar','Full Stack Java Dveleoper')">
+		</footer>
+	</section>
+</body>
+</html>

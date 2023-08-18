@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>TypesOfServlets</display-name>
+  
+  <!-- Servlet Servlet -->
+   <servlet>
+  	<servlet-name>Servlets</servlet-name>
+  	<servlet-class>com.servletTypes.ServServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Servlets</servlet-name>
+  	<url-pattern>/serv</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- Generic Servlet -->
+  <servlet>
+  	<servlet-name>Generic</servlet-name>
+  	<servlet-class>com.servletTypes.GenServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Generic</servlet-name>
+  	<url-pattern>/generic</url-pattern>
+  </servlet-mapping>
+  
+    <!-- HTTP Servlet -->
+  <servlet>
+  	<servlet-name>htp</servlet-name>
+  	<servlet-class>com.servletTypes.HtpServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>htp</servlet-name>
+  	<url-pattern>/htp</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

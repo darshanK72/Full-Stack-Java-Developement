@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    th:fragment="page(content)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}">
+    <title>Spring Security</title>
+</head>
+
+<body>
+    <header>
+        <h1>This is Header</h1>
+    </header>
+    <div th:insert="${content}"></div>
+    <footer>
+        <h1>This is Footer</h1>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+E:\Full Stack Java\15. Spring Boot\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\491946023.index
+\FirstSpringToolSuit\src\main\java
+E:\Full Stack Java\15. Spring Boot\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3393537105.index
+\2. FirstSpringToolSuit\src\main\java

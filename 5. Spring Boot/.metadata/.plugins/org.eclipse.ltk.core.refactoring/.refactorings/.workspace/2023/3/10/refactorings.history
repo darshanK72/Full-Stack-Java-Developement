@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;OktaAuthApplication&apos; to &apos;18. OktaAuthApplication&apos;" description="Rename resource &apos;OktaAuthApplication&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/OktaAuthApplication" name="18. OktaAuthApplication" stamp="1678075750735" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;OktaOpenIDAuth&apos; to &apos;19. OktaOpenIDAuth&apos;" description="Rename resource &apos;OktaOpenIDAuth&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/OktaOpenIDAuth" name="19. OktaOpenIDAuth" stamp="1678075763260" updateReferences="true"/>
+</session>

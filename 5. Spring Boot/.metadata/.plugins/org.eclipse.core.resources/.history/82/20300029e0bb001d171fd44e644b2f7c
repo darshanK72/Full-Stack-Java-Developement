@@ -1,0 +1,31 @@
+package com.springboot.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springboot.entity.User;
+import com.springboot.repository.UserRepository;
+
+@Service
+public class UserService {
+	
+	@Autowired 
+	private UserRepository userRepository;
+	
+	public List<User> getAllUsers()
+	{
+		return (List<User>) this.userRepository.findAll();
+	}
+	
+	public String addUser(User user) {
+        this.userRepository.save(user);
+        return "User Added Successfully !!!";
+    }
+
+    public User getUser(int userId) {
+        return this.userRepository.findById(userId).orElse(new User());
+    }
+
+}

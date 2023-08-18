@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">  
+    
+    <bean class="com.spring.SpringDependencyInjection.beans.Student" name="student1">
+    	<property name="rollNo">
+    		<value>101</value>
+    	</property>
+    	<property name="name">
+    		<value>Darshan Khairnar</value>
+    	</property>
+    	<property name="marks">
+    		<value>63.34</value>
+    	</property>
+    	<property name="div">
+    		<value>A</value>
+    	</property>
+    	<property name="address">
+    		<value>Anand Nagar, Malegaon</value>
+    	</property>
+    </bean>  
+    
+    <bean class="com.spring.SpringDependencyInjection.beans.Student" name="student2">
+    	<property name="rollNo" value="102"/>
+    	<property name="name" value="Prasad Khairnar"/>
+    	<property name="marks" value="87.32"/>
+    	<property name="div" value="A"/>
+    	<property name="address" value="Pandit Coloney, Nashik"/>
+    </bean>
+    
+    <bean class="com.spring.SpringDependencyInjection.beans.Student" name="student3" 
+    	  p:rollNo="103" p:name="Aakash Khairnar" p:marks="74.2" p:div="M" p:address="Joyti Nagar, Malegaon" />
+    	  
+   	<bean class="com.spring.SpringDependencyInjection.beans.Student" name="student4">
+  	 	<constructor-arg value="104"></constructor-arg>
+   		<constructor-arg value="Vaishnavi Khairnar"/>
+   		<constructor-arg value="78.52"/>
+   		<constructor-arg value="C"/>
+   		<constructor-arg value="Joity Nagar, Malegaon"/>
+   	</bean>
+   	
+   	<bean class="com.spring.SpringDependencyInjection.beans.Company" name="company1">
+   		<property name="name">
+   			<value>Tata Consultency Services</value>
+   		</property>
+   		<property name="employeeList">
+   			<list>
+   				<value>Darshan</value>
+   				<value>Prasad</value>
+   				<value>Aakash</value>
+   				<value>Vaishnavi</value>
+   				<value>Abhishek</value>
+   			</list>
+   		</property>
+   		
+   		<property name="phoneList">
+   			<set>
+   				<value>9834444657</value>
+   				<value>9834344657</value>
+   				<value>9834463245</value>
+   				<value>6344444657</value>
+   				<value>98634444657</value>
+   			</set>
+   		</property>
+   		
+   		<property name="managerList">
+   			<map>
+   				<entry key="Darshan" value="Darshan"/>
+   				<entry key="Prasad" value="Darshan"/>
+   				<entry key="Aakash" value="Darshan"/>
+   				<entry key="Vaishnavi" value="Darshan"/>
+   				<entry key="Abhishek" value="Darshan"/>
+   			</map>
+   		</property>
+   	</bean>
+   	
+   	<bean class="com.spring.SpringDependencyInjection.beans.Address" name="add1">
+   		<property name="street">
+   			<value>Anand Nagar</value>
+   		</property>
+   		<property name="city">
+   			<value>Malegaon</value>
+   		</property>
+   		<property name="state">
+   			<value>Maharashtra</value>
+   		</property>
+   	</bean>
+   	
+   	<bean class="com.spring.SpringDependencyInjection.beans.Employee" name="emp1">
+   		<property name="employeeId">
+   			<value>1001</value>
+   		</property>
+   		<property name="name">
+   			<value>Darshan Khairnar</value>
+   		</property>
+   		<property name="address">
+   			<ref bean="add1"/>
+   		</property>
+   	</bean>
+   
+</beans>
